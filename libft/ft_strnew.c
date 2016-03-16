@@ -6,7 +6,7 @@
 /*   By: jdavin <jdavin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 23:46:13 by jdavin            #+#    #+#             */
-/*   Updated: 2015/12/08 16:29:43 by jdavin           ###   ########.fr       */
+/*   Updated: 2016/03/16 14:40:58 by jdavin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 char	*ft_strnew(size_t size)
 {
-	char	*nw;
+	char	*str;
 	size_t	i;
 
 	i = 0;
-	nw = (char *)malloc(sizeof(char) * (size + 1));
-	if (nw == NULL)
+	str = NULL;
+	str = malloc(sizeof(char) * size + 1);
+	if (str == NULL)
 		return (NULL);
-	while (i <= size)
+	while (i < size)
 	{
-		nw[i] = '\0';
+		str[i] = '\0';
 		i++;
 	}
-	return (nw);
+	str[i] = '\0';
+	return (str);
 }
